@@ -1,0 +1,22 @@
+r1:
+  Ethernet1: 10.0.12.1/30
+  Ethernet2: 10.0.13.1/30
+
+r2:
+  Ethernet1: 10.0.12.2/30
+  Ethernet2: 10.0.23.1/30
+  Ethernet3: 10.0.24.1/30
+
+r3:
+  Ethernet1: 10.0.13.2/30
+  Ethernet2: 10.0.23.2/30
+  Ethernet3: 10.0.34.1/30
+
+r4:
+  Ethernet1: 10.0.24.2/30
+  Ethernet2: 10.0.34.2/30
+  Ethernet3: 10.0.45.1/30
+
+r5:
+  Ethernet1: 10.0.45.2/30
+

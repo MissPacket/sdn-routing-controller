@@ -48,8 +48,6 @@ This mirrors the behavior of **link-state routing protocols**, but uses a centra
 ---
 
 ## Repository Contents
-
-```
 .
 ├── controller.py # Main SDN controller (orchestration logic)
 ├── lldp_collect.py # LLDP-based topology discovery
@@ -68,6 +66,8 @@ This mirrors the behavior of **link-state routing protocols**, but uses a centra
 - Docker
 - Containerlab
 - Arista cEOS (tested on EOS 4.35.x)
+
+---
 
 ### Python Dependencies
 ```

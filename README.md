@@ -51,11 +51,13 @@ This mirrors the behavior of **link-state routing protocols**, but uses a centra
 
 ```
 .
-├── sdn_global_routing_controller.py   # Single-file SDN controller
-├── topology.clab.yaml                 # Containerlab topology
-├── requirements.txt                   # Python dependencies
+├── controller.py # Main SDN controller (orchestration logic)
+├── lldp_collect.py # LLDP-based topology discovery
+├── ip_collect.py # Interface IP and prefix discovery
+├── graph_utils.py # Graph construction + BFS shortest path
+├── install_routes.py # Static route installation (CLI-based)
+├── topology.clab.yaml # Containerlab topology (cEOS)
 └── README.md
-```
 
 ---
 

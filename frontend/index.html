@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SDN Topology Builder</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        input, button, select {
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .list {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        pre {
+            background: #111;
+            color: #0f0;
+            padding: 15px;
+            overflow: auto;
+        }
+
+        /* Diagram styling */
+        #diagram svg {
+            width: 100%;
+            height: 420px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+        }
+
+        .node text {
+            font-size: 12px;
+            pointer-events: none;
+        }
+
+        .status-box {
+            display: none;
+            padding: 14px 18px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .status-running {
+            background: #fff8e1;
+            border: 1px solid #f0b429;
+            color: #7a5c00;
+        }
+
+        .status-success {
+            background: #e6f4ea;
+            border: 1px solid #34a853;
+            color: #1a5c2a;
+        }
+
+        .status-error {
+            background: #fce8e6;
+            border: 1px solid #ea4335;
+            color: #7a1e1e;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>SDN Topology Builder</h2>
+
+<!-- ============================= -->
+<!-- Router Section -->
+<!-- ============================= -->
+<div class="section">
+    <h3>Add Router</h3>
+
+    <input type="text" id="routerName" placeholder="Router name (e.g., r1)">
+    <button onclick="addRouter()">Add Router</button>
+
+    <div class="list" id="routerList"></div>
+</div>
+
+<!-- ============================= -->
+<!-- Link Section -->
+<!-- ============================= -->
+<div class="section">
+    <h3>Add Link</h3>
+
+    <select id="routerA"></select>
+    <select id="routerB"></select>
+
+    <button onclick="addLink()">Add Link</button>
+
+    <div class="list" id="linkList"></div>
+</div>
+
+<!-- ============================= -->
+<!-- Topology Diagram Section -->
+<!-- ============================= -->
+<div class="section">
+    <h3>Topology Diagram</h3>
+    <div id="diagram"></div>
+</div>
+
+<!-- ============================= -->
+<!-- JSON Preview Section -->
+<!-- ============================= -->
+<div class="section">
+    <h3>Generated JSON</h3>
+    <pre id="jsonPreview">{}</pre>
+</div>
+
+<!-- ============================= -->
+<!-- Deploy Section -->
+<!-- ============================= -->
+<div class="section">
+    <button onclick="deploy()">Deploy</button>
+    <div id="deployStatus" class="status-box"></div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

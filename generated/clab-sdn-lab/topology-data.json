@@ -1,0 +1,146 @@
+{
+  "name": "sdn-lab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-eabdae38d714",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "r1": {
+      "index": "0",
+      "shortname": "r1",
+      "longname": "clab-sdn-lab-r1",
+      "fqdn": "r1.sdn-lab.io",
+      "group": "",
+      "labdir": "/home/geetha/sdn-routing-controller/generated/clab-sdn-lab/r1",
+      "kind": "ceos",
+      "image": "ceos:4.35.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.11",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:bf:76:6f",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-eabdae38d714",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/geetha/sdn-routing-controller/generated/clab-sdn-lab/r1",
+        "clab-node-longname": "clab-sdn-lab-r1",
+        "clab-node-name": "r1",
+        "clab-node-type": "",
+        "clab-owner": "geetha",
+        "clab-topo-file": "/home/geetha/sdn-routing-controller/generated/topology.clab.yaml",
+        "containerlab": "sdn-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r2": {
+      "index": "1",
+      "shortname": "r2",
+      "longname": "clab-sdn-lab-r2",
+      "fqdn": "r2.sdn-lab.io",
+      "group": "",
+      "labdir": "/home/geetha/sdn-routing-controller/generated/clab-sdn-lab/r2",
+      "kind": "ceos",
+      "image": "ceos:4.35.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.12",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:a9:2a:65",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-eabdae38d714",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/geetha/sdn-routing-controller/generated/clab-sdn-lab/r2",
+        "clab-node-longname": "clab-sdn-lab-r2",
+        "clab-node-name": "r2",
+        "clab-node-type": "",
+        "clab-owner": "geetha",
+        "clab-topo-file": "/home/geetha/sdn-routing-controller/generated/topology.clab.yaml",
+        "containerlab": "sdn-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "r3": {
+      "index": "2",
+      "shortname": "r3",
+      "longname": "clab-sdn-lab-r3",
+      "fqdn": "r3.sdn-lab.io",
+      "group": "",
+      "labdir": "/home/geetha/sdn-routing-controller/generated/clab-sdn-lab/r3",
+      "kind": "ceos",
+      "image": "ceos:4.35.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.13",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "00:1c:73:dd:27:4a",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-eabdae38d714",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/geetha/sdn-routing-controller/generated/clab-sdn-lab/r3",
+        "clab-node-longname": "clab-sdn-lab-r3",
+        "clab-node-name": "r3",
+        "clab-node-type": "",
+        "clab-owner": "geetha",
+        "clab-topo-file": "/home/geetha/sdn-routing-controller/generated/topology.clab.yaml",
+        "containerlab": "sdn-lab"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:e1:70:a9",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:4e:bc:d6",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "r1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:1d:5c:b9",
+          "peer": "z"
+        },
+        "z": {
+          "node": "r3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:71:84:11",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

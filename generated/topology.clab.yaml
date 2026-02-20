@@ -1,0 +1,31 @@
+name: sdn-lab
+mgmt:
+  network: clab
+  ipv4-subnet: 172.20.20.0/24
+topology:
+  kinds:
+    ceos:
+      image: ceos:4.35.1F
+      env:
+        INTFTYPE: eth
+      startup-config: "hostname {{ .Name }}\nservice routing protocols model multi-agent\n\
+        lldp run\n\nusername admin privilege 15 role network-admin secret admin\n\n\
+        management ssh\nno shutdown\n\nmanagement api http-commands\n  protocol http\n\
+        \  no shutdown"
+  nodes:
+    r1:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.11
+    r2:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.12
+    r3:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.13
+  links:
+  - endpoints:
+    - r1:eth1
+    - r2:eth1
+  - endpoints:
+    - r1:eth2
+    - r3:eth1

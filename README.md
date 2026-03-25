@@ -1,4 +1,4 @@
-# SDN Network Controller Platform
+# SDN Controller Platform
 
 A full-stack Software-Defined Networking (SDN) orchestration platform that automates the deployment, configuration, and management of containerized network topologies.
 
